@@ -23,6 +23,8 @@ $(function() {
 			var $columnCardList = $('<ul>').addClass('column-card-list');
 			var $columnDelete = $('<button>').addClass('btn-delete').text('x');
 			var $columnAddCard = $('<button>').addClass('add-card').text('Dodaj kartę');
+		
+			
 			//PODPINANIE ZDARZEN- usuwanie i dodawanie kart mpo kliknieciu
 			$columnDelete.click(function() {
         		self.removeColumn();
@@ -32,8 +34,8 @@ $(function() {
 			});
 			// KONSTRUOWANIE ELEMENTOW KOLUMNY
 			$column.append($columnTitle)
-        		.append($columnDelete)
-        		.append($columnAddCard)
+				.append($columnAddCard)
+				.append($columnDelete)
         		.append($columnCardList);
         	// ZWRACANIE ZROBIONEJ KOLUMNY	
 			return $column;
@@ -66,8 +68,9 @@ $(function() {
         		self.removeCard();
 			});
 			// skladanie i zwracanie karty
-			$card.append($cardDelete)
-			.append($cardDescription);
+			$card .append($cardDescription)
+				.append($cardDelete);
+				 
 
 			return $card;
 		}
